@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="MiK Beauty oferuje profesjonalne zabiegi kosmetyczne, w tym pielęgnację skóry, masaże i usługi manicure w Szczecinie. Umów się na wizytę online!">
+    <title>MiK Beauty - Profesjonalne Zabiegi Kosmetyczne w Szczecinie</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        html {
+            min-height: 100%;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            font-family: 'Poppins', sans-serif;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            position: relative;
+            z-index: 1;
+            min-height: 100vh;
+        }
+
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            min-height: 100%;
+            background-image: linear-gradient(rgba(128, 128, 128, 0.2), rgba(128, 128, 128, 0.2)), url(tło.webp);
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            opacity: 0.3;
+            z-index: -1;
+        }
+
+        .main-content {
+            flex: 1;
+        }
+
+        /* Header Section */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            background-color: rgba(173, 216, 230, 0.8);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            box-sizing: border-box;
+            z-index: 1000;
+            box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.8);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100px;
+            height: 100px;
+            border: 2px solid #333;
+            border-radius: 10px;
+            background-color: #ffffff;
+        }
+
+        .logo img {
+            max-width: 80%;
+            max-height: 80%;
+            filter: drop-shadow(2px 2px 5px rgba(0, 0, 0, 0.5));
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            position: relative;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            transition: color 0.3s ease;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-menu a:hover {
+            color: #333;
+        }
+
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background: linear-gradient(135deg, #87CEEB 0%, #c1dbe4 100%);
+            min-width: 200px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .dropdown-content a {
+            color: #333;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            text-align: left;
+            position: relative;
+            transition: color 0.3s ease, background-color 0.3s ease;
+        }
+
+        .dropdown-content a:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .appointment-btn {
+            background-color: #87CEEB;
+            color: #333;
+            padding: 10px 20px;
+            border: 2px solid #333;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 900;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .appointment-btn:hover {
+            background-color: #5EA5BB;
+            transform: scale(1.05);
+        }
+
+        /* Hero Section */
+        .hero-section {
+            position: relative;
+            height: 100vh;
+            max-height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            padding-top: 100px;
+            text-align: center;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+        }
+
+        .hero-section h1 {
+            font-size: 48px;
+            color: #333;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .hero-section p {
+            font-size: 24px;
+            color: #333;
+            margin: 10px 0 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Services Section */
+        .services-section {
+            background-color: rgba(172, 172, 172, 0.4);
+            color: #333;
+            padding-top: 40px;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            text-align: center;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+        }
+
+        .service {
+            flex: 1;
+            max-width: 250px;
+            margin: 20px;
+            box-sizing: border-box;
+            transition: transform 0.3s ease;
+            text-decoration: none;
+            color: #333;
+        }
+
+        .service:hover {
+            transform: scale(1.1);
+        }
+
+        .service img {
+            width: 150px;
+            height: 150px;
+            border-radius: 30%;
+            object-fit: cover;
+            display: block;
+            margin: 0 auto;
+            border: 2px solid #333;
+            filter: drop-shadow(2px 2px 5px rgba(0, 0, 0, 0.5));
+        }
+
+        .service h3,
+        .service p {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .service p {
+            margin: 10px 0;
+        }
+
+        /* Footer Section */
+        footer {
+            background-color: #ADD8E6;
+            color: #333;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        footer .icon-container {
+            display: flex;
+            gap: 20px;
+        }
+
+        footer .icon-container a i {
+            font-size: 32px;
+            transition: font-size 0.3s ease;
+        }
+
+        footer .icon-container a:hover i {
+            font-size: 36px;
+        }
+
+        footer .contact-info {
+            text-align: center;
+            font-weight: bold;
+            font-size: 14px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+
+        footer .contact-info a {
+            color: #ff9a9e;
+            text-decoration: none;
+            transition: color 0.6s ease;
+        }
+
+        footer .contact-info a:hover {
+            color: #ffffff;
+        }
+
+        .icon-container i {
+            margin: 0 10px;
+            color: #333;
+            font-size: 24px;
+        }
+
+        .icon-container i:hover {
+            transform: scale(1.2);
+            transition: 0.6s;
+        }
+
+        .call-now {
+            text-align: center;
+            margin: 10px 0;
+        }
+
+        .call-button {
+            display: inline-block;
+            background-color: #87CEEB;
+            color: #333;
+            font-size: 32px;
+            padding: 15px 30px;
+            border: 2px solid #333;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .call-button:hover {
+            background-color: #5EA5BB;
+            transform: scale(1.05);
+        }
+
+        /* Media Queries */
+        @media (max-width: 1024px) {
+            header {
+                flex-direction: row;
+                position: static;
+            }
+
+            footer {
+                padding: 15px 20px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .hero-section {
+                padding-top: 0px;
+                height: 300px;
+            }
+
+            .services-section {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .service {
+                flex: 1 1 calc(33.333% - 40px);
+                max-width: calc(33.333% - 40px);
+                margin: 20px;
+            }
+
+            .service:nth-child(4),
+            .service:nth-child(5) {
+                flex: 1 1 calc(50% - 40px);
+                max-width: calc(50% - 40px);
+            }
+
+            footer .icon-container {
+                margin-bottom: 15px;
+            }
+
+            footer .contact-info p {
+                margin: 5px 0;
+            }
+
+            footer .call-now {
+                margin-top: 15px;
+            }
+
+            .call-button {
+                padding: 10px 20px;
+                font-size: 18px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .appointment-btn {
+                width: auto;
+                display: block;
+                text-align: center;
+                box-sizing: border-box;
+                margin-top: 10px;
+                align-self: center;
+                width: 100%;
+            }
+
+            .appointment-btn:hover {
+                background-color: #5EA5BB;
+                transform: scale(1.00);
+            }
+
+            .logo {
+                width: 80px;
+                height: 80px;
+                margin-bottom: 10px;
+            }
+
+            .logo img {
+                max-width: 80%;
+                max-height: 80%;
+            }
+
+            .nav-menu {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .nav-menu a {
+                width: 100%;
+                text-align: center;
+                padding: 10px 0;
+            }
+
+            .dropdown-content {
+                position: static;
+                width: 100%;
+            }
+
+            .main-content {
+                padding: 50px 10px 10px 10px;
+            }
+
+            .service {
+                max-width: 100%;
+                margin: 10px 0;
+            }
+
+            .services-section {
+                padding: 10px 5px 20px;
+                margin-bottom: 30px;
+            }
+
+            .service img {
+                width: 120px;
+                height: 120px;
+            }
+
+            .hero-section h1 {
+                font-size: 28px;
+                margin-bottom: 10px;
+            }
+
+            .hero-section p {
+                font-size: 16px;
+                margin-bottom: 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-section {
+                height: 30vh !important;
+                padding-top: 0px !important;
+                box-sizing: border-box !important;
+            }
+
+            .hero-section h1,
+            .hero-section p {
+                margin: 0;
+            }
+
+            .service {
+                flex: 1 1 100%;
+                max-width: 100%;
+                margin-top: 50px !important;
+            }
+
+            .service:nth-child(4) {
+                margin: 30px;
+            }
+
+            .service:nth-child(5) {
+                margin: 30px;
+            }
+
+            .logo {
+                width: 60px;
+                height: 60px;
+                margin-bottom: 5px;
+            }
+
+            .logo img {
+                max-width: 80%;
+                max-height: 80%;
+            }
+
+            .nav-menu a {
+                font-size: 14px;
+                padding: 8px 0;
+            }
+
+            .appointment-btn {
+                padding: 8px 16px;
+                font-size: 14px;
+            }
+
+            .main-content {
+                padding: 30px 5px 5px 5px;
+            }
+
+            .hero-section h1 {
+                font-size: 24px;
+            }
+
+            .hero-section p {
+                font-size: 14px;
+            }
+
+            footer {
+                padding: 10px 20px;
+            }
+
+            .call-button {
+                font-size: 16px;
+                padding: 10px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="logo">
+            <img src="logo.jpg" alt="Logo MiK Beauty">
+        </div>
+        <nav class="nav-menu">
+            <a href="index.html">STRONA GŁÓWNA</a>
+            <div class="dropdown">
+                <a>USŁUGI</a>
+                <div class="dropdown-content">
+                    <a href="zabiegi_pielęgnacyjne.html">Zabiegi pielęgnacyjne</a>
+                    <a href="zabiegi_laserowe.html">Zabiegi laserowe</a>
+                    <a href="masaże.html">Masaże</a>
+                    <a href="brwi_rzęsy.html">Brwi i rzęsy</a>
+                    <a href="paznokcie.html">Paznokcie</a>
+                    <a href="szkolenia.html">Szkolenia</a>
+                </div>
+            </div>
+            <a href="kontakt.html">KONTAKT</a>
+        </nav>
+        <a href="https://booksy.com/pl-pl/165360_mik-beauty_salon-kosmetyczny_18078_szczecin#ba_s=sr_1" target="_blank" class="appointment-btn">UMÓW WIZYTĘ</a>
+    </header>
+
+    <div class="main-content">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div>
+                <h1>Kompleksowa pielęgnacja od stóp do głów w centrum Szczecina!</h1>
+                <p>Umów się na wizytę online lub przyjdź do nas</p>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section class="services-section">
+            <a href="cennik_zabiegi.html" class="service">
+                <img src="zabieg3.jpg" alt="Profesjonalny zabieg pielęgnacyjny twarzy w MiK Beauty">
+                <h3>Zabiegi pielęgnacyjne</h3>
+                <p>Oferujemy profesjonalne zabiegi pielęgnacyjne. Nasza kosmetyczka dostosowuje każdy zabieg do potrzeb Twojej skóry.</p>
+            </a>
+            <a href="cennik-masaże.html" class="service">
+                <img src="masaż 2.jpg" alt="Relaksacyjny masaż w salonie MiK Beauty w Szczecinie">
+                <h3>Masaże</h3>
+                <p>Poczuj odprężenie dzięki uspokajającym masażom.</p>
+            </a>
+            <a href="szkolenia.html" class="service">
+                <img src="kasia.jpeg" alt="Profesjonalne szkolenia kosmetyczne w MiK Beauty">
+                <h3>Szkolenia</h3>
+                <p>Podnieś swoje kwalifikacje dzięki naszym profesjonalnym szkoleniom.</p>
+            </a>
+            <a href="cennik-oczy.html" class="service">
+                <img src="rzęsy.jpg" alt="Stylizacja rzęs i brwi w MiK Beauty">
+                <h3>Brwi i rzęsy</h3>
+                <p>Oczy potrafią wyrazić więcej niż 1000 słów, dlatego zadbamy by twoje były najpiękniejsze.</p>
+            </a>
+            <a href="cennik-paznokcie.html" class="service">
+                <img src="Paznokcie.jpg" alt="Zdobienie paznokci w MiK Beauty w Szczecinie">
+                <h3>Paznokcie</h3>
+                <p>Przykuj uwagę zdobieniami na swych dłoniach.</p>
+            </a>
+        </section>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="icon-container">
+            <a href="https://www.facebook.com/profile.php?id=100087314075394" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/mik__beauty/" target="_blank"><i class="fab fa-instagram"></i></a>
+        </div>
+
+        <div class="call-now">
+            <a href="tel:+48601827531" class="call-button">Zadzwoń teraz</a>
+        </div>
+
+        <div class="contact-info">
+            <p>&copy; MiK Beauty, wszelkie prawa zastrzeżone</p>
+            <p>Telefon: <a href="tel:+48601827531">+48 601 827 531</a></p>
+            <p>Adres: Ul. Targ Rybny 4, 00-000 Szczecin</p>
+        </div>
+    </footer>
+</body>
+
+</html>
