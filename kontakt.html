@@ -609,19 +609,66 @@
 
         <div class="contact-form">
             <h3>Zapytaj o wizytę!</h3>
-            <form action="mailto:kontakt@mikbeauty.pl" method="POST" enctype="text/plain">
+            <form id="contactForm">
                 <label for="name">Imię i nazwisko:</label>
                 <input type="text" id="name" name="name" required>
-
+        
                 <label for="email">Email:</label>
                 <input type="email" id="email" name="email" required>
-
+        
                 <label for="message">Wiadomość:</label>
                 <textarea id="message" name="message" rows="5" required></textarea>
-
+        
+                <!-- Honeypot field (hidden from users) -->
+                <input type="text" id="honeypot" name="fullname" style="display:none">
+        
                 <button type="submit">Wyślij</button>
             </form>
+        
+            <div id="formFeedback" style="margin-top: 15px; display: none;"></div>
         </div>
+        
+        <script>
+        document.getElementById("contactForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Zatrzymaj domyślne działanie formularza
+        
+            // Sprawdzenie honeypot - jeśli jest wypełnione, traktuj jako spam
+            if (document.getElementById("honeypot").value !== "") {
+                document.getElementById("formFeedback").style.color = "red";
+                document.getElementById("formFeedback").textContent = "Wykryto próbę spamu.";
+                document.getElementById("formFeedback").style.display = "block";
+                return;
+            }
+        
+            // Pobierz dane z formularza
+            const formData = new FormData(this);
+        
+            // Wysyłka AJAX-em
+            fetch("https://formcarry.com/s/6F_MU9qktof", {
+                method: "POST",
+                body: formData,
+                headers: {
+                    "Accept": "application/json"
+                }
+            }).then(function(response) {
+                if (response.ok) {
+                    document.getElementById("formFeedback").style.color = "green";
+                    document.getElementById("formFeedback").textContent = "Wiadomość została wysłana pomyślnie!";
+                } else {
+                    document.getElementById("formFeedback").style.color = "red";
+                    document.getElementById("formFeedback").textContent = "Wystąpił problem podczas wysyłania wiadomości. Spróbuj ponownie.";
+                }
+                document.getElementById("formFeedback").style.display = "block";
+            }).catch(function(error) {
+                document.getElementById("formFeedback").style.color = "red";
+                document.getElementById("formFeedback").textContent = "Wystąpił problem podczas wysyłania wiadomości. Spróbuj ponownie.";
+                document.getElementById("formFeedback").style.display = "block";
+            });
+        
+            // Możesz opcjonalnie wyczyścić formularz po wysłaniu
+            this.reset();
+        });
+        </script>
     </section>
 
     <!-- Sekcja stopki -->
