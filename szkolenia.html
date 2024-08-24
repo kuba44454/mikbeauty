@@ -7,6 +7,8 @@
     <meta name="description" content="Profesjonalne szkolenia kosmetyczne w MiK Beauty Szczecin. Zdobądź wiedzę i umiejętności z mikrodermabrazji, infuzji tlenowej, peelingu kawitacyjnego i innych nowoczesnych technik. Podnieś swoje kwalifikacje w branży kosmetycznej z naszymi kursami." />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles\style_base.css">
+    <link rel="stylesheet" href="styles\style_szkolenia.css">
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-PXCBGGNLNL"></script>
     <script>
@@ -16,531 +18,11 @@
 
     gtag('config', 'G-PXCBGGNLNL');
     </script>
-    <style>
-        html {
-            min-height: 100%;
-        }
-
-        body {
-            display: flex;
-            flex-direction: column;
-            font-family: 'Poppins', sans-serif;
-            color: #333;
-            margin: 0;
-            padding: 0;
-            position: relative;
-            z-index: 1;
-            min-height: 100vh;
-        }
-
-        body::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            min-height: 100%;
-            background-image: linear-gradient(rgba(128, 128, 128, 0.2), rgba(128, 128, 128, 0.2)), url(tło.webp);
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            opacity: 0.3;
-            z-index: -1;
-        }
-
-        .main-content {
-            flex: 1;
-        }
-
-        /* Header Section */
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 40px;
-            background-color: rgba(173, 216, 230, 0.8);
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            box-sizing: border-box;
-            z-index: 1000;
-            box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.8);
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 100px;
-            height: 100px;
-            border: 2px solid #333;
-            border-radius: 10px;
-            background-color: #ffffff;
-        }
-
-        .logo img {
-            max-width: 80%;
-            max-height: 80%;
-            filter: drop-shadow(2px 2px 5px rgba(0, 0, 0, 0.5));
-        }
-
-        .nav-menu {
-            display: flex;
-            gap: 20px;
-            align-items: center;
-            position: relative;
-        }
-
-        .nav-menu a {
-            text-decoration: none;
-            color: #333;
-            font-weight: bold;
-            transition: color 0.3s ease;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        .nav-menu a:hover {
-            color: #333;
-        }
-
-        .dropdown {
-            position: relative;
-        }
-
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background: linear-gradient(135deg, #87CEEB 0%, #c1dbe4 100%);
-            min-width: 200px;
-            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-            z-index: 1;
-            border-radius: 5px;
-            overflow: hidden;
-        }
-
-        .dropdown-content a {
-            color: #333;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            text-align: left;
-            position: relative;
-            transition: color 0.3s ease, background-color 0.3s ease;
-        }
-
-        .dropdown-content a:hover {
-            background-color: rgba(255, 255, 255, 0.3);
-        }
-
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-
-        .appointment-btn {
-            background-color: #87CEEB;
-            color: #333;
-            padding: 10px 20px;
-            border: 2px solid #333;
-            border-radius: 25px;
-            text-decoration: none;
-            font-weight: 900;
-            transition: background-color 0.3s ease, transform 0.3s ease;
-        }
-
-        .appointment-btn:hover {
-            background-color: #5EA5BB;
-            transform: scale(1.05);
-        }
-
-        /* Styl sekcji szkoleń */
-        .training-section {
-            padding: 140px 20px 40px;
-            text-align: left;
-        }
-
-        .training-section h1 {
-            font-size: 48px;
-            margin-bottom: 20px;
-            text-align: center;
-            text-decoration: double;
-            color: #87CEEB;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
-        }
-
-        .training-table {
-            width: 80%;
-            margin: 0 auto;
-            border-collapse: collapse;
-            background-color: rgba(255, 255, 255, 0.5);
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.4);
-        }
-
-        .training-table th {
-            background-color: #87CEEB;
-            color: #333;
-            padding: 15px;
-            border-bottom: 2px solid #ddd;
-            font-size: 24px;
-            font-weight: 700;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        .training-table td {
-            padding: 12px;
-            border-bottom: 1px solid #ddd;
-            font-size: 18px;
-            font-weight: 400;
-            color: #333;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        .description {
-            background-color: #f1f6f7;
-            font-size: 16px;
-            color: #555;
-            padding: 10px;
-            border-bottom: 1px solid #ddd;
-            word-wrap: break-word;
-            text-align: justify;
-        }
-
-        .course-outline {
-            margin-top: 40px;
-            padding: 20px;
-            background-color: #ffffff;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            text-align: left;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .course-outline h3 {
-            font-size: 24px;
-            color: #333;
-            margin-bottom: 20px;
-            text-align: center;
-        }
-
-        .course-outline ul {
-            list-style: disc;
-            padding-left: 20px;
-        }
-
-        .course-outline ul li {
-            margin-bottom: 10px;
-            font-size: 18px;
-            line-height: 1.5;
-        }
-
-        .course-outline p {
-            font-size: 16px;
-            color: #666;
-            margin-top: 20px;
-            font-style: italic;
-            text-align: center;
-        }
-
-        .contact {
-            text-align: center;
-            margin-top: 20px;
-            font-size: 18px;
-        }
-
-        .contact a {
-            color: #87CEEB;
-            text-decoration: none;
-        }
-
-        .contact a:hover {
-            color: #333;
-        }
-
-        /* Styl stopki */
-        footer {
-            background-color: #ADD8E6;
-            color: #333;
-            padding: 10px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.3);
-        }
-
-        footer .icon-container {
-            display: flex;
-            gap: 20px;
-        }
-
-        footer .icon-container a i {
-            font-size: 32px;
-            transition: font-size 0.3s ease;
-        }
-
-        footer .icon-container a:hover i {
-            font-size: 36px;
-        }
-
-        footer .contact-info {
-            text-align: center;
-            font-weight: bold;
-            font-size: 14px;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-        }
-
-        footer .contact-info a {
-            color: #ff9a9e;
-            text-decoration: none;
-            transition: color 0.6s ease;
-        }
-
-        footer .contact-info a:hover {
-            color: #ffffff;
-        }
-
-        /* Styl ikon */
-        .icon-container i {
-            margin: 0 10px;
-            color: #333;
-            font-size: 24px;
-        }
-
-        .icon-container i:hover {
-            transform: scale(1.2);
-            transition: 0.6s;
-        }
-
-        /* Styl dla przycisku "Zadzwoń teraz" */
-        .call-now {
-            text-align: center;
-            margin: 10px 0;
-        }
-
-        .call-button {
-            display: inline-block;
-            background-color: #87CEEB;
-            color: #333;
-            font-size: 32px;
-            padding: 15px 30px;
-            border: 2px solid #333;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: background-color 0.3s ease, transform 0.3s ease;
-        }
-
-        .call-button:hover {
-            background-color: #5EA5BB;
-            transform: scale(1.05);
-        }
-
-        /* Media Queries */
-        @media (max-width: 1024px) {
-            header {
-                flex-direction: row;
-                position: static;
-            }
-
-            footer {
-                padding: 15px 20px;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                text-align: center;
-            }
-
-            footer .icon-container {
-                margin-bottom: 15px;
-            }
-
-            footer .contact-info p {
-                margin: 5px 0;
-            }
-
-            footer .call-now {
-                margin-top: 15px;
-            }
-
-            .call-button {
-                padding: 10px 20px;
-                font-size: 18px;
-            }
-        }
-
-        @media (max-width: 768px) {
-            header {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .appointment-btn {
-                width: auto;
-                display: block;
-                text-align: center;
-                box-sizing: border-box;
-                margin-top: 10px;
-                align-self: center;
-                width: 100%;
-            }
-
-            .appointment-btn:hover {
-                background-color: #5EA5BB;
-                transform: scale(1.00);
-            }
-
-            .logo {
-                width: 80px;
-                height: 80px;
-                margin-bottom: 10px;
-            }
-
-            .logo img {
-                max-width: 80%;
-                max-height: 80%;
-            }
-
-            .nav-menu {
-                width: 100%;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .nav-menu a {
-                width: 100%;
-                text-align: center;
-                padding: 10px 0;
-            }
-
-            .dropdown-content {
-                position: static;
-                width: 100%;
-            }
-
-            .main-content {
-                padding: 50px 10px 10px 10px;
-            }
-
-            .service {
-                max-width: 100%;
-                margin: 10px 0;
-            }
-
-            .services-section {
-                padding: 10px 5px 20px;
-                margin-bottom: 30px;
-            }
-
-            .service img {
-                width: 120px;
-                height: 120px;
-            }
-
-            .training-section {
-                padding: 10px 5px 20px;
-                margin-bottom: 30px;
-            }
-
-            .training-section h1 {
-                font-size: 28px;
-                margin-bottom: 10px;
-            }
-
-            .training-table {
-                width: 95%;
-                margin: 0 auto;
-                font-size: 14px;
-            }
-
-            .training-table th,
-            .training-table td {
-                padding: 8px;
-                font-size: 16px;
-            }
-
-            .group-header {
-                font-size: 18px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .logo {
-                width: 60px;
-                height: 60px;
-                margin-bottom: 5px;
-            }
-
-            .logo img {
-                max-width: 80%;
-                max-height: 80%;
-            }
-
-            .nav-menu a {
-                font-size: 14px;
-                padding: 8px 0;
-            }
-
-            .appointment-btn {
-                padding: 8px 16px;
-                font-size: 14px;
-            }
-
-            .main-content {
-                padding: 30px 5px 5px 5px;
-            }
-
-            .service {
-                flex: 1 1 100%;
-                max-width: 100%;
-                margin-top: 50px !important;
-            }
-
-            footer {
-                padding: 10px 20px;
-            }
-
-            .call-button {
-                font-size: 16px;
-                padding: 10px 20px;
-            }
-
-            .training-section {
-                padding: 0px 10px 0px;
-                margin-bottom: 30px;
-            }
-
-            .training-section h1 {
-                font-size: 24px;
-                margin-bottom: 10px;
-            }
-
-            .training-table {
-                width: 100%;
-                font-size: 14px !important;
-            }
-
-            .training-table th,
-            .training-table td {
-                padding: 4px;
-                font-size: 12px !important;
-            }
-
-            .group-header {
-                font-size: 18px !important;
-            }
-        }
-    </style>
 </head>
 <body>
     <header>
         <div class="logo">
-            <img src="logo.jpg" alt="Logo MiK Beauty">
+          <img src="photos\logo.jpg" alt="Logo MiK Beauty">
         </div>
         <nav class="nav-menu">
             <a href="index.html">STRONA GŁÓWNA</a>
@@ -562,94 +44,94 @@
 
     <!-- Sekcja szkoleń -->
     <section class="training-section">
-        <h1>Szkolenia</h1>
-        <table class="training-table">
-            <thead>
-                <tr>
-                    <th>Przedmiot Szkolenia</th>
-                    <th>Cena</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><strong>Mikrodermabrazja diamentowa</strong></td>
-                    <td>1200 zł</td>
-                </tr>
-                <tr>
-                    <td colspan="2" class="description">Szkolenie z mikrodermabrazji diamentowej nauczy Cię, jak skutecznie wykorzystać tę technikę do głębokiego oczyszczania i odmładzania skóry. Dowiesz się, jak poprawnie obsługiwać urządzenie oraz dostosowywać intensywność zabiegu do potrzeb klienta. Kurs obejmuje teoretyczne podstawy oraz praktyczne ćwiczenia na modelkach. Poznasz również przeciwwskazania oraz zasady bezpieczeństwa podczas wykonywania zabiegu. Po ukończeniu szkolenia będziesz w stanie profesjonalnie przeprowadzać mikrodermabrazję diamentową, zapewniając swoim klientom widoczne rezultaty.</td>
-                </tr>
-                <tr>
-                    <td><strong>Infuzja tlenowa / oxybrazja</strong></td>
-                    <td>1000 zł</td>
-                </tr>
-                <tr>
-                    <td colspan="2" class="description">Szkolenie z infuzji tlenowej i oxybrazji przygotuje Cię do wykonywania nowoczesnych zabiegów dotleniających i nawilżających skórę. Nauczysz się, jak korzystać z urządzeń do infuzji tlenowej, aby dostarczać skórze niezbędnych składników odżywczych. Kurs obejmuje zarówno teoretyczne zagadnienia, jak i praktyczne ćwiczenia, umożliwiające zdobycie umiejętności potrzebnych do profesjonalnego przeprowadzania zabiegów. Dowiesz się również, jak prawidłowo oceniać stan skóry klienta oraz dostosowywać zabieg do indywidualnych potrzeb. Po ukończeniu szkolenia będziesz w stanie oferować klientom efektywne zabiegi poprawiające kondycję ich skóry.</td>
-                </tr>
-                <tr>
-                    <td><strong>Peeling kawitacyjny</strong></td>
-                    <td>1000 zł</td>
-                </tr>
-                <tr>
-                    <td colspan="2" class="description">Podczas szkolenia z peelingu kawitacyjnego poznasz nowoczesną metodę oczyszczania skóry za pomocą ultradźwięków. Nauczysz się, jak skutecznie usuwać martwe komórki naskórka oraz zanieczyszczenia, zapewniając skórze świeży i promienny wygląd. Kurs obejmuje zarówno teoretyczne podstawy, jak i praktyczne zajęcia, umożliwiające zdobycie niezbędnych umiejętności. Dowiesz się, jak prawidłowo obsługiwać urządzenie kawitacyjne oraz jakie są przeciwwskazania do zabiegu. Po ukończeniu szkolenia będziesz w stanie profesjonalnie przeprowadzać peeling kawitacyjny, zapewniając swoim klientom widoczne rezultaty.</td>
-                </tr>
-                <tr>
-                    <td><strong>Sonoforeza</strong></td>
-                    <td>600 zł</td>
-                </tr>
-                <tr>
-                    <td colspan="2" class="description">Szkolenie z sonoforezy nauczy Cię, jak wykorzystać ultradźwięki do wprowadzania substancji aktywnych w głąb skóry. Poznasz techniki pracy z urządzeniem do sonoforezy oraz dowiesz się, jakie substancje są najefektywniejsze w poszczególnych problemach skórnych. Kurs obejmuje zarówno teorię, jak i praktyczne ćwiczenia, umożliwiające zdobycie umiejętności potrzebnych do profesjonalnego przeprowadzania zabiegów. Nauczysz się, jak prawidłowo oceniać stan skóry klienta oraz dostosowywać zabieg do jego potrzeb. Po ukończeniu szkolenia będziesz w stanie oferować klientom skuteczne zabiegi poprawiające kondycję ich skóry.</td>
-                </tr>
-                <tr>
-                    <td><strong>Ultradźwięki</strong></td>
-                    <td>800 zł</td>
-                </tr>
-                <tr>
-                    <td colspan="2" class="description">Szkolenie z ultradźwięków nauczy Cię, jak skutecznie wykorzystywać tę technologię do pielęgnacji skóry i terapii problemów skórnych. Dowiesz się, jak działa ultradźwiękowe urządzenie oraz jakie są jego zastosowania w kosmetologii. Kurs obejmuje teoretyczne podstawy oraz praktyczne ćwiczenia, umożliwiające zdobycie niezbędnych umiejętności. Poznasz techniki pracy z ultradźwiękami oraz dowiesz się, jak bezpiecznie i efektywnie przeprowadzać zabiegi. Po ukończeniu szkolenia będziesz w stanie profesjonalnie wykorzystywać ultradźwięki w swojej praktyce, oferując klientom nowoczesne i skuteczne rozwiązania.</td>
-                </tr>
-                <tr>
-                    <td><strong>Fala radiowa</strong></td>
-                    <td>800 zł</td>
-                </tr>
-                <tr>
-                    <td colspan="2" class="description">Szkolenie z fali radiowej (RF) przygotuje Cię do wykonywania zabiegów liftingujących i odmładzających skórę za pomocą technologii radiowej. Nauczysz się, jak poprawnie obsługiwać urządzenie RF oraz dostosowywać intensywność zabiegu do potrzeb klienta. Kurs obejmuje teoretyczne podstawy dotyczące działania fali radiowej oraz praktyczne ćwiczenia na modelkach. Dowiesz się również, jakie są przeciwwskazania do zabiegu oraz jak zapewnić bezpieczeństwo podczas jego wykonywania. Po ukończeniu szkolenia będziesz w stanie oferować swoim klientom skuteczne zabiegi poprawiające elastyczność i jędrność skóry.</td>
-                </tr>
-                <tr>
-                    <td><strong>Oczyszczanie wodorowe</strong></td>
-                    <td>1300 zł</td>
-                </tr>
-                <tr>
-                    <td colspan="2" class="description">Szkolenie z oczyszczania wodorowego nauczy Cię, jak wykorzystać wodór do głębokiego oczyszczania i nawilżania skóry. Poznasz techniki pracy z urządzeniem do oczyszczania wodorowego oraz dowiesz się, jakie korzyści przynosi ten zabieg dla różnych typów skóry. Kurs obejmuje zarówno teorię, jak i praktyczne ćwiczenia, umożliwiające zdobycie umiejętności potrzebnych do profesjonalnego przeprowadzania zabiegów. Nauczysz się, jak prawidłowo oceniać stan skóry klienta oraz dostosowywać zabieg do jego potrzeb. Po ukończeniu szkolenia będziesz w stanie oferować klientom nowoczesne i efektywne zabiegi oczyszczające.</td>
-                </tr>
-                <tr>
-                    <td><strong>Mezoterapia nanoigłowa</strong></td>
-                    <td>1500 zł</td>
-                </tr>
-                <tr>
-                    <td colspan="2" class="description">Szkolenie z mezoterapii nanoigłowej wprowadzi Cię w świat nowoczesnych technik odmładzania i regeneracji skóry. Nauczysz się, jak bezpiecznie i skutecznie wykonywać zabiegi z użyciem nanoigieł, dostarczając skórze niezbędnych substancji odżywczych. Kurs obejmuje teoretyczne zagadnienia dotyczące mezoterapii oraz praktyczne ćwiczenia na modelkach. Dowiesz się, jak prawidłowo oceniać potrzeby skóry klienta oraz jakie preparaty stosować w poszczególnych przypadkach. Po ukończeniu szkolenia będziesz w stanie profesjonalnie przeprowadzać zabiegi mezoterapii nanoigłowej, zapewniając swoim klientom widoczne rezultaty.</td>
-                </tr>
-                <tr>
-                    <td><strong>Endermomasaż</strong></td>
-                    <td>1000 zł</td>
-                </tr>
-                <tr>
-                    <td colspan="2" class="description">Szkolenie z endermomasażu nauczy Cię, jak wykorzystywać technologię podciśnieniową do modelowania sylwetki i poprawy kondycji skóry. Poznasz zasady działania urządzeń do endermomasażu oraz techniki ich obsługi. Kurs obejmuje zarówno teoretyczne podstawy, jak i praktyczne zajęcia, umożliwiające zdobycie niezbędnych umiejętności. Nauczysz się, jak prawidłowo przeprowadzać zabiegi endermomasażu oraz jakie są przeciwwskazania do ich wykonywania. Po ukończeniu szkolenia będziesz w stanie oferować swoim klientom skuteczne zabiegi modelujące i ujędrniające.</td>
-                </tr>
-                <tr>
-                    <td><strong>Płytki masaż kinetyczny</strong></td>
-                    <td>1200 zł</td>
-                </tr>
-                <tr>
-                    <td colspan="2" class="description">Szkolenie z płytkiego masażu kinetycznego wprowadzi Cię w techniki delikatnego masażu poprawiającego krążenie i elastyczność skóry. Nauczysz się, jak wykonywać masaż kinetyczny, który łączy w sobie elementy relaksacyjne i terapeutyczne. Kurs obejmuje teoretyczne zagadnienia dotyczące masażu kinetycznego oraz praktyczne ćwiczenia, pozwalające na zdobycie niezbędnych umiejętności. Dowiesz się, jakie są wskazania i przeciwwskazania do wykonywania tego typu masażu. Po ukończeniu szkolenia będziesz w stanie profesjonalnie oferować płytki masaż kinetyczny, pomagając swoim klientom w poprawie ich samopoczucia i kondycji skóry.</td>
-                </tr>
-            </tbody>
-        </table>
+      <h1>Szkolenia</h1>
+      <table class="training-table">
+          <thead>
+              <tr>
+                  <th>Przedmiot Szkolenia</th>
+                  <th>Cena</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr>
+                  <td><strong>Mikrodermabrazja diamentowa</strong></td>
+                  <td>1200 zł</td>
+              </tr>
+              <tr>
+                  <td colspan="2" class="description">Szkolenie z mikrodermabrazji diamentowej nauczy Cię, jak skutecznie wykorzystać tę technikę do głębokiego oczyszczania i odmładzania skóry. Dowiesz się, jak poprawnie obsługiwać urządzenie oraz dostosowywać intensywność zabiegu do potrzeb klienta. Kurs obejmuje teoretyczne podstawy oraz praktyczne ćwiczenia na modelkach. Poznasz również przeciwwskazania oraz zasady bezpieczeństwa podczas wykonywania zabiegu. Po ukończeniu szkolenia będziesz w stanie profesjonalnie przeprowadzać mikrodermabrazję diamentową, zapewniając swoim klientom widoczne rezultaty.</td>
+              </tr>
+              <tr>
+                  <td><strong>Infuzja tlenowa / oxybrazja</strong></td>
+                  <td>1000 zł</td>
+              </tr>
+              <tr>
+                  <td colspan="2" class="description">Szkolenie z infuzji tlenowej i oxybrazji przygotuje Cię do wykonywania nowoczesnych zabiegów dotleniających i nawilżających skórę. Nauczysz się, jak korzystać z urządzeń do infuzji tlenowej, aby dostarczać skórze niezbędnych składników odżywczych. Kurs obejmuje zarówno teoretyczne zagadnienia, jak i praktyczne ćwiczenia, umożliwiające zdobycie umiejętności potrzebnych do profesjonalnego przeprowadzania zabiegów. Dowiesz się również, jak prawidłowo oceniać stan skóry klienta oraz dostosowywać zabieg do indywidualnych potrzeb. Po ukończeniu szkolenia będziesz w stanie oferować klientom efektywne zabiegi poprawiające kondycję ich skóry.</td>
+              </tr>
+              <tr>
+                  <td><strong>Peeling kawitacyjny</strong></td>
+                  <td>1000 zł</td>
+              </tr>
+              <tr>
+                  <td colspan="2" class="description">Podczas szkolenia z peelingu kawitacyjnego poznasz nowoczesną metodę oczyszczania skóry za pomocą ultradźwięków. Nauczysz się, jak skutecznie usuwać martwe komórki naskórka oraz zanieczyszczenia, zapewniając skórze świeży i promienny wygląd. Kurs obejmuje zarówno teoretyczne podstawy, jak i praktyczne zajęcia, umożliwiające zdobycie niezbędnych umiejętności. Dowiesz się, jak prawidłowo obsługiwać urządzenie kawitacyjne oraz jakie są przeciwwskazania do zabiegu. Po ukończeniu szkolenia będziesz w stanie profesjonalnie przeprowadzać peeling kawitacyjny, zapewniając swoim klientom widoczne rezultaty.</td>
+              </tr>
+              <tr>
+                  <td><strong>Sonoforeza</strong></td>
+                  <td>600 zł</td>
+              </tr>
+              <tr>
+                  <td colspan="2" class="description">Szkolenie z sonoforezy nauczy Cię, jak wykorzystać ultradźwięki do wprowadzania substancji aktywnych w głąb skóry. Poznasz techniki pracy z urządzeniem do sonoforezy oraz dowiesz się, jakie substancje są najefektywniejsze w poszczególnych problemach skórnych. Kurs obejmuje zarówno teorię, jak i praktyczne ćwiczenia, umożliwiające zdobycie umiejętności potrzebnych do profesjonalnego przeprowadzania zabiegów. Nauczysz się, jak prawidłowo oceniać stan skóry klienta oraz dostosowywać zabieg do jego potrzeb. Po ukończeniu szkolenia będziesz w stanie oferować klientom skuteczne zabiegi poprawiające kondycję ich skóry.</td>
+              </tr>
+              <tr>
+                  <td><strong>Ultradźwięki</strong></td>
+                  <td>800 zł</td>
+              </tr>
+              <tr>
+                  <td colspan="2" class="description">Szkolenie z ultradźwięków nauczy Cię, jak skutecznie wykorzystywać tę technologię do pielęgnacji skóry i terapii problemów skórnych. Dowiesz się, jak działa ultradźwiękowe urządzenie oraz jakie są jego zastosowania w kosmetologii. Kurs obejmuje teoretyczne podstawy oraz praktyczne ćwiczenia, umożliwiające zdobycie niezbędnych umiejętności. Poznasz techniki pracy z ultradźwiękami oraz dowiesz się, jak bezpiecznie i efektywnie przeprowadzać zabiegi. Po ukończeniu szkolenia będziesz w stanie profesjonalnie wykorzystywać ultradźwięki w swojej praktyce, oferując klientom nowoczesne i skuteczne rozwiązania.</td>
+              </tr>
+              <tr>
+                  <td><strong>Fala radiowa</strong></td>
+                  <td>800 zł</td>
+              </tr>
+              <tr>
+                  <td colspan="2" class="description">Szkolenie z fali radiowej (RF) przygotuje Cię do wykonywania zabiegów liftingujących i odmładzających skórę za pomocą technologii radiowej. Nauczysz się, jak poprawnie obsługiwać urządzenie RF oraz dostosowywać intensywność zabiegu do potrzeb klienta. Kurs obejmuje teoretyczne podstawy dotyczące działania fali radiowej oraz praktyczne ćwiczenia na modelkach. Dowiesz się również, jakie są przeciwwskazania do zabiegu oraz jak zapewnić bezpieczeństwo podczas jego wykonywania. Po ukończeniu szkolenia będziesz w stanie oferować swoim klientom skuteczne zabiegi poprawiające elastyczność i jędrność skóry.</td>
+              </tr>
+              <tr>
+                  <td><strong>Oczyszczanie wodorowe</strong></td>
+                  <td>1300 zł</td>
+              </tr>
+              <tr>
+                  <td colspan="2" class="description">Szkolenie z oczyszczania wodorowego nauczy Cię, jak wykorzystać wodór do głębokiego oczyszczania i nawilżania skóry. Poznasz techniki pracy z urządzeniem do oczyszczania wodorowego oraz dowiesz się, jakie korzyści przynosi ten zabieg dla różnych typów skóry. Kurs obejmuje zarówno teorię, jak i praktyczne ćwiczenia, umożliwiające zdobycie umiejętności potrzebnych do profesjonalnego przeprowadzania zabiegów. Nauczysz się, jak prawidłowo oceniać stan skóry klienta oraz dostosowywać zabieg do jego potrzeb. Po ukończeniu szkolenia będziesz w stanie oferować klientom nowoczesne i efektywne zabiegi oczyszczające.</td>
+              </tr>
+              <tr>
+                  <td><strong>Mezoterapia nanoigłowa</strong></td>
+                  <td>1500 zł</td>
+              </tr>
+              <tr>
+                  <td colspan="2" class="description">Szkolenie z mezoterapii nanoigłowej wprowadzi Cię w świat nowoczesnych technik odmładzania i regeneracji skóry. Nauczysz się, jak bezpiecznie i skutecznie wykonywać zabiegi z użyciem nanoigieł, dostarczając skórze niezbędnych substancji odżywczych. Kurs obejmuje teoretyczne zagadnienia dotyczące mezoterapii oraz praktyczne ćwiczenia na modelkach. Dowiesz się, jak prawidłowo oceniać potrzeby skóry klienta oraz jakie preparaty stosować w poszczególnych przypadkach. Po ukończeniu szkolenia będziesz w stanie profesjonalnie przeprowadzać zabiegi mezoterapii nanoigłowej, zapewniając swoim klientom widoczne rezultaty.</td>
+              </tr>
+              <tr>
+                  <td><strong>Endermomasaż</strong></td>
+                  <td>1000 zł</td>
+              </tr>
+              <tr>
+                  <td colspan="2" class="description">Szkolenie z endermomasażu nauczy Cię, jak wykorzystywać technologię podciśnieniową do modelowania sylwetki i poprawy kondycji skóry. Poznasz zasady działania urządzeń do endermomasażu oraz techniki ich obsługi. Kurs obejmuje zarówno teoretyczne podstawy, jak i praktyczne zajęcia, umożliwiające zdobycie niezbędnych umiejętności. Nauczysz się, jak prawidłowo przeprowadzać zabiegi endermomasażu oraz jakie są przeciwwskazania do ich wykonywania. Po ukończeniu szkolenia będziesz w stanie oferować swoim klientom skuteczne zabiegi modelujące i ujędrniające.</td>
+              </tr>
+              <tr>
+                  <td><strong>Płytki masaż kinetyczny</strong></td>
+                  <td>1200 zł</td>
+              </tr>
+              <tr>
+                  <td colspan="2" class="description">Szkolenie z płytkiego masażu kinetycznego wprowadzi Cię w techniki delikatnego masażu poprawiającego krążenie i elastyczność skóry. Nauczysz się, jak wykonywać masaż kinetyczny, który łączy w sobie elementy relaksacyjne i terapeutyczne. Kurs obejmuje teoretyczne zagadnienia dotyczące masażu kinetycznego oraz praktyczne ćwiczenia, pozwalające na zdobycie niezbędnych umiejętności. Dowiesz się, jakie są wskazania i przeciwwskazania do wykonywania tego typu masażu. Po ukończeniu szkolenia będziesz w stanie profesjonalnie oferować płytki masaż kinetyczny, pomagając swoim klientom w poprawie ich samopoczucia i kondycji skóry.</td>
+              </tr>
+          </tbody>
+      </table>
 
-        <div class="contact">
-            <p>*W przypadku szkoleń grupowych lub ich łączenia, cenę ustalamy indywidualnie</p>
-            <p>Zapisy wyłącznie telefonicznie pod numerem:</p>
-            <p>Telefon: <a href="tel:+48601827531">+48 601 827 531</a></p>
-        </div>
-    </section>
+      <div class="contact">
+          <p>*W przypadku szkoleń grupowych lub ich łączenia, cenę ustalamy indywidualnie</p>
+          <p>Zapisy wyłącznie telefonicznie pod numerem:</p>
+          <p>Telefon: <a href="tel:+48601827531">+48 601 827 531</a></p>
+      </div>
+  </section>
 
     <!-- Sekcja stopki -->
     <footer>
@@ -821,7 +303,6 @@
             }
           ]
         }
-        </script>
-        
+    </script>
 </body>
 </html>

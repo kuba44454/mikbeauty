@@ -1,0 +1,206 @@
+/* style_kontakt.css */
+
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    z-index: 1;
+    min-height: 100vh;
+}
+
+.main-content {
+    flex: 1;
+}
+
+/* Styl sekcji opisu */
+.description-section {
+    padding: 140px 20px 40px;
+    text-align: left;
+    max-width: 800px; /* Dodanie maksymalnej szerokości */
+    margin: 0 auto; /* Wyśrodkowanie opisu */
+}
+
+.description-section h2 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    text-align: center;
+    text-decoration: double;
+    color: #87CEEB;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.description-section p {
+    font-size: 18px;
+    line-height: 1.6;
+    text-align: justify;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Styl sekcji kontaktowej */
+.contact-section {
+    display: flex;
+    flex-direction: column;
+    width: 80%; /* Zaktualizowanie szerokości na 80% */
+    max-width: 1400px; /* Poszerzanie całej sekcji - zmieniono z 1200px na 1400px */
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #E0F7FA;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.contact-top {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px; /* Zwiększenie odstępu między lewą a prawą kolumną - zmieniono z 20px na 30px */
+    margin-bottom: 10px; /* Zmniejszenie odstępu poniżej danych kontaktowych - zmieniono z 20px na 10px */
+}
+
+.mik-contact-details {
+    flex: 1;
+    color: #333;
+    display: flex; /* Dodanie Flexbox */
+    flex-direction: column; /* Ustawienie kierunku kolumny */
+    align-items: center; /* Wyśrodkowanie poziome */
+    justify-content: space-between; /* Wyśrodkowanie pionowe */
+    text-align: center; /* Wyśrodkowanie tekstu */
+}
+
+/* Styl nagłówków */
+.info-block h3 {
+    margin-bottom: 20px; /* Zmniejszenie odstępu poniżej nagłówka */
+    font-size: 24px; /* Zmniejszenie rozmiaru czcionki nagłówka */
+    color: #2C3E50;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.info-block hr {
+    border-top: 2px solid #87CEEB; /* Zmniejszenie grubości linii pod nagłówkiem */
+    width: 100%;
+}
+
+/* Styl dla niebieskich napisów */
+.blue-text {
+    color: #87CEEB;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 4px; /* Zmniejszenie odstępu poniżej niebieskiego tekstu */
+}
+
+/* Styl dla czarnych napisów */
+.black-text {
+    color: #333;
+    margin-top: -5px; /* Zmniejszenie odstępu powyżej czarnego tekstu */
+}
+
+/* Styl dla linków */
+.info-block a {
+    color: #2C3E50;
+    text-decoration: none;
+}
+
+.info-block a:hover {
+    color: #87CEEB;
+}
+
+/* Styl mapy */
+.map-container {
+    width: 100%; /* Szerokość mapy dostosowana do szerokości kontenera */
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 400px;
+    border: none;
+    border-radius: 10px;
+}
+
+/* Styl formularza kontaktowego */
+.contact-form {
+    margin-top: 20px; /* Dystans od góry, poniżej mapy */
+    width: 100%;
+}
+
+/* Styl formularza */
+.contact-form h3 {
+    font-size: 24px;
+    color: #2C3E50;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-form input, .contact-form textarea {
+    width: 100%; /* Pełna szerokość w kontenerze */
+    padding: 10px;
+    border: 1px solid #87CEEB;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #333;
+    background-color: #FFF; /* Białe tło */
+    box-sizing: border-box; /* Uwzględnienie paddingu w szerokości */
+}
+
+.contact-form button {
+    padding: 10px;
+    background-color: #5EA5BB;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: #4A94A8;
+    transform: scale(1.01);
+}
+
+/* Media queries dla responsywności */
+@media (max-width: 768px) {
+    .description-section {
+        padding: 50px 10px 10px 10px;
+    }
+
+    .contact-details, .contact-form {
+        width: 100%;
+    }
+
+    .map-container iframe {
+        height: 180px;
+    }
+}
+
+@media (max-width: 480px) {
+    .description-section {
+        padding: 30px 5px 5px 5px;
+    }
+
+    .info-block h3 {
+        font-size: 16px;
+    }
+
+    .black-text {
+        font-size: 12px;
+    }
+
+    .contact-details, .contact-form {
+        width: 100%;
+    }
+
+    .map-container iframe {
+        height: 150px;
+    }
+}

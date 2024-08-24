@@ -1,0 +1,197 @@
+/* style.css */
+
+.main-content {
+    flex: 1;
+}
+
+/* Styl sekcji szkoleń */
+.training-section {
+    padding: 140px 20px 40px;
+    text-align: left;
+}
+
+.training-section h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    text-align: center;
+    text-decoration: double;
+    color: #87CEEB;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.training-table {
+    width: 80%;
+    margin: 0 auto;
+    border-collapse: collapse;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+.training-table th {
+    background-color: #87CEEB;
+    color: #333;
+    padding: 15px;
+    border-bottom: 2px solid #ddd;
+    font-size: 24px;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.training-table td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+    font-size: 18px;
+    font-weight: 400;
+    color: #333;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.description {
+    background-color: #f1f6f7;
+    font-size: 16px;
+    color: #555;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    word-wrap: break-word;
+    text-align: justify;
+}
+
+.course-outline {
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.course-outline h3 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.course-outline ul {
+    list-style: disc;
+    padding-left: 20px;
+}
+
+.course-outline ul li {
+    margin-bottom: 10px;
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+.course-outline p {
+    font-size: 16px;
+    color: #666;
+    margin-top: 20px;
+    font-style: italic;
+    text-align: center;
+}
+
+.contact {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+.contact a {
+    color: #87CEEB;
+    text-decoration: none;
+}
+
+.contact a:hover {
+    color: #333;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .main-content {
+        padding: 50px 10px 10px 10px;
+    }
+
+    .service {
+        max-width: 100%;
+        margin: 10px 0;
+    }
+
+    .services-section {
+        padding: 10px 5px 20px;
+        margin-bottom: 30px;
+    }
+
+    .service img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .training-section {
+        padding: 10px 5px 20px;
+        margin-bottom: 30px;
+    }
+
+    .training-section h1 {
+        font-size: 28px;
+        margin-bottom: 10px;
+    }
+
+    .training-table {
+        width: 95%;
+        margin: 0 auto;
+        font-size: 14px;
+    }
+
+    .training-table th,
+    .training-table td {
+        padding: 8px;
+        font-size: 16px;
+    }
+
+    .group-header {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-content {
+        padding: 30px 5px 5px 5px;
+    }
+
+    .service {
+        flex: 1 1 100%;
+        max-width: 100%;
+        margin-top: 50px !important;
+    }
+
+    .training-section {
+        padding: 0px 10px 0px;
+        margin-bottom: 30px;
+    }
+
+    .training-section h1 {
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+
+    .training-table {
+        width: 100%;
+        font-size: 14px !important;
+    }
+
+    .training-table th,
+    .training-table td {
+        padding: 4px;
+        font-size: 12px !important;
+    }
+
+    .group-header {
+        font-size: 18px !important;
+    }
+}

@@ -1,0 +1,210 @@
+/* Styl sekcji cennika */
+.pricing-section {
+    padding: 00px 20px 40px; /* Dostosowany padding */
+    text-align: left;
+}
+
+.pricing-section h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    text-align: center;
+    text-decoration: double;
+    color: #87CEEB;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.pricing-table {
+    width: 80%;
+    margin: 0 auto;
+    border-collapse: collapse;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+.pricing-table th {
+    background-color: #87CEEB;
+    color: #333;
+    padding: 15px;
+    border-bottom: 2px solid #ddd;
+    font-size: 24px;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.pricing-table td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+    font-size: 18px;
+    font-weight: 400;
+    color: #333;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.group-header {
+    font-size: 22px;
+    font-weight: bold;
+    background-color: #c1ecff;
+    color: #ffffff;
+    padding: 10px;
+    cursor: pointer;
+    position: relative;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.group-header::after {
+    content: '\25BC';
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: transform 0.3s ease;
+}
+
+.description {
+    display: none;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+    background-color: #f1f6f7;
+}
+
+.description.show {
+    display: table-row;
+}
+.carousel-container {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin: 180px auto 20px; /* Zmieniony margines */
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-item {
+    min-width: 100%;
+    transition: transform 0.5s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.carousel-item img {
+    width: 100%;
+    display: block;
+    border-radius: 10px;
+}
+
+.carousel-control {
+    width: 40px; 
+    height: 40px; 
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 0;
+    border-radius: 50%;
+    z-index: 100;
+}
+
+.carousel-control.prev {
+    left: 10px;
+}
+
+.carousel-control.next {
+    right: 10px;
+}
+
+.carousel-control:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .service {
+        max-width: 100%;
+        margin: 10px 0;
+    }
+
+    .pricing-section {
+        padding: 10px 5px 20px;
+        margin-bottom: 30px;
+    }
+
+    .pricing-section h1 {
+        font-size: 28px;
+        margin-bottom: 10px;
+    }
+
+    .pricing-table {
+        width: 95%;
+        margin: 0 auto;
+        font-size: 14px;
+    }
+
+    .pricing-table th, .pricing-table td {
+        padding: 8px;
+        font-size: 16px;
+    }
+
+    .group-header {
+        font-size: 18px;
+    }
+
+    .carousel-container {
+        max-width: 100%;
+        margin: 60px auto 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-content {
+        padding: 30px 5px 5px 5px;
+    }
+
+    .service {
+        flex: 1 1 100%;
+        margin: 10px 0;
+    }
+
+    .pricing-section {
+        padding: 0px 10px 0px;
+        margin-bottom: 30px;
+    }
+
+    .pricing-section h1 {
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+
+    .pricing-table {
+        width: 100%;
+        font-size: 14px !important;
+    }
+
+    .pricing-table th, .pricing-table td {
+        padding: 4px;
+        font-size: 12px !important;
+    }
+
+    .group-header {
+        font-size: 18px !important;
+    }
+
+    .carousel-control {
+        font-size: 18px;
+        padding: 8px;
+    }
+
+    .carousel-container {
+    margin: 60px auto 20px;
+    }
+}
