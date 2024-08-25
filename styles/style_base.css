@@ -22,7 +22,7 @@ body::before {
     left: 0;
     width: 100%;
     min-height: 100%;
-    background-image: linear-gradient(rgba(128, 128, 128, 0.2), rgba(128, 128, 128, 0.2)), url(photos\tło.webp);
+    background-image: linear-gradient(rgba(128, 128, 128, 0.2), rgba(128, 128, 128, 0.2)), url(tło.webp);
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -213,33 +213,30 @@ footer .contact-info a:hover {
 /* Media Queries */
 @media (max-width: 1024px) {
 
-    header {
-        flex-direction: row;
-        position: static;
-    }
+    /* Footer Section */
     footer {
-        padding: 15px 20px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
+        padding: 10px 20px;
     }
 
     footer .icon-container {
-        margin-bottom: 15px;
+        display: flex;
+        gap: 20px;
     }
 
-    footer .contact-info p {
-        margin: 5px 0;
+    footer .icon-container a i {
+        font-size: 24px;
     }
 
-    footer .call-now {
-        margin-top: 15px;
+    footer .icon-container a:hover i {
+        font-size: 24px;
     }
 
+    footer .contact-info {
+        font-size: 12px;
+    }
     .call-button {
+        font-size: 24px;
         padding: 10px 20px;
-        font-size: 18px;
     }
 }
 
@@ -247,8 +244,9 @@ footer .contact-info a:hover {
     header {
         flex-direction: column;
         align-items: center;
+        position: static;
     }
-
+    
     .appointment-btn {
         width: auto;
         display: block;
@@ -287,6 +285,27 @@ footer .contact-info a:hover {
         text-align: center;
         padding: 10px 0;
     }
+
+    footer {
+        padding: 15px 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    footer .icon-container {
+        margin-bottom: 15px;
+    }
+
+    footer .contact-info p {
+        margin: 5px 0;
+    }
+
+    footer .call-now {
+        margin-top: 15px;
+    }
+
 }
 
 @media (max-width: 480px) {
