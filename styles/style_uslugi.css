@@ -127,6 +127,11 @@
     background-color: rgba(0, 0, 0, 0.7);
 }
 
+.content-separator {
+    margin-bottom: 30px; /* Dodaje dodatkowy odstęp między sekcjami */
+    clear: both; /* Zapewnia, że nic nie wpłynie na pozycję tej sekcji */
+}
+
 /* Media Queries */
 @media (max-width: 768px) {
     .service {
